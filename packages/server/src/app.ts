@@ -13,9 +13,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api', router);
 
 // SPA fallback
-app.get('/:path(.*)', (req, res, next) => {
-  console.log(req.url);
+// SPA fallback for non-API requests — use middleware to avoid path-to-regexp issues
+app.use((req, res, next) => {
   if (req.url.startsWith('/api/')) {
+    return next();
+  }
+  if (req.method !== 'GET') {
     return next();
   }
   res.sendFile(path.join(publicDir, 'index.html'));

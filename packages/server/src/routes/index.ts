@@ -42,7 +42,7 @@ router.get('/tasks/:taskId', async function(req, res) {
     const { taskId } = req.params;
     
     // TODO: get task from database
-    const task = {};
+    const task: any = {};
 
     res.json(task);
   } catch (error: any) {
@@ -55,7 +55,7 @@ router.patch('/tasks/:taskId', async function(req, res) {
     const { taskId } = req.params;
     
     // TODO: get existing task in database
-    const task = {};
+    const task: any = {};
     task.completed = Boolean(req.body?.completed);
 
     // TODO: update task in database

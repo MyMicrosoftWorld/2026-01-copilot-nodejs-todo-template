@@ -17,15 +17,15 @@
     "packages/*"
   ],
   "devDependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^9.2.1"
   },
   "engines": {
     "node": ">=20.0.0",
     "npm": ">=10.0.0"
   },
   "dependencies": {
-    "@azure/cosmos": "^4.0.0",
-    "@types/node": "^20.14.11",
-    "rimraf": "^6.0.1"
+    "@azure/cosmos": "^4.9.0",
+    "@types/node": "^25.0.3",
+    "rimraf": "^6.1.2"
   }
 }

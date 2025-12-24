@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api', router);
 
 // SPA fallback
-app.get('/:path(*)', (req, res, next) => {
+app.get('/:path(.*)', (req, res, next) => {
   console.log(req.url);
   if (req.url.startsWith('/api/')) {
     return next();
